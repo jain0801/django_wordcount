@@ -23,5 +23,6 @@ urlpatterns = [
     path('about/',myapp.views.about,name="about"),
     path('result/',myapp.views.result, name="result"),
     path('creates/', myapp.views.create, name='create'),
+    path('total/',myapp.views.total,name="total"),
     # path('creates/<int:result_id>',myapp.views.detail,name="detail"),
 ]

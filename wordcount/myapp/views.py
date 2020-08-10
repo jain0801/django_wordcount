@@ -26,6 +26,12 @@ def result(request):
 
     return render(request, 'result.html', {'full':text, 'total':len(words), 'dic':word_dic.items()})
 
+def total(request):
+    words=Word.objects
+    word_dic={}
+    return render(request,'total.html',{'words':words,'dic':word_dic.items()})
+
+
 # def detail(request, result_id):
 #     detail = get_object_or_404(Word, pk=result_id)
 #     return render(request, 'result.html', {'detail': detail})
