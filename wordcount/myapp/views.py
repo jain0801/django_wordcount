@@ -12,12 +12,18 @@ def about(request):
 def result(request):
     text=request.GET['fulltext']
     words=text.split()
+
+    global word_dic
     word_dic={}
+
+
     for word in words:
         if word in word_dic:
             word_dic[word]+=1
         else:
             word_dic[word]=1
+
+
     return render(request, 'result.html', {'full':text, 'total':len(words), 'dic':word_dic.items()})
 
 # def detail(request, result_id):
@@ -26,9 +32,11 @@ def result(request):
 
 def create(request):
     word_result=Word()
-    word_result.wordcount=request.GET['result']
+    # word_result.wordcount=request.GET['result']
+    word_result.wordcount=word_dic
     word_result.save()
-    return redirect(str(word_result.id))
+    return render(request, 'home.html')
+    # return redirect('creates/'+str(word_result.id))
 
 # def post_add(request):
 #     if request.method=='POST':
