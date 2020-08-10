@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>여기서 글자를 COUNT 하세요!</h1>
+    <a href="{%url 'about'%}">ABOUT</a>
+    <div class="container">
+        <form action="{%url 'result'%}">
+            <!-- {% csrf_token %} -->
+            <textarea cols="40" rows="10" name="fulltext"></textarea>
+            <br>
+            <input type="submit" value="count!">
+        </form>
+    </div>
+</body>
+</html>
